@@ -1,12 +1,12 @@
 function getComputerChoice () {
-    let choiceSelector = Math.floor(Math.random()*9);
+    let choiceSelector = Math.floor(Math.random()*3);
     let computerChoice;
 
-    if (choiceSelector <= 2) {
+    if (choiceSelector === 0) {
         computerChoice = "rock";
         return computerChoice;
     } 
-    else if (choiceSelector <= 5) {
+    else if (choiceSelector === 1) {
         computerChoice = "scissors";
         return computerChoice;
     }
@@ -16,17 +16,27 @@ function getComputerChoice () {
     }
 }
 
-console.log(getComputerChoice());
-
 function getPlayerChoice () {
     let playerChoice = prompt("Please enter your choice, Rock, paper, or Scissors:").toLowerCase().trim()
     if (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors"){
         alert("Please enter a valid input");
-        getPlayerChoice()
+        return getPlayerChoice()
+    }
+    return playerChoice;
+}
+let computerChoice = "rock";
+let playerChoice = getPlayerChoice();
+console.log(computerChoice);
+function playRound (computerChoice, playerChoice) {
+    if (computerChoice === playerChoice) {
+        alert("It’s a tie! 🤝, you'll replay this round")
+    }
+    else if ((playerChoice === "rock" && computerChoice === "scissors") || (playerChoice === "scissors" && computerChoice === "paper") || (playerChoice === "paper" && computerChoice === "rock")) {
+        alert("You win!!! 🎉🏆")
     }
     else {
-        return playerChoice;
+        alert("You lose 😭💀")
     }
 }
 
-console.log(getPlayerChoice())
+playRound(computerChoice, playerChoice);
