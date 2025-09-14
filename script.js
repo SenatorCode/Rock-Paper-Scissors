@@ -17,26 +17,77 @@ function getComputerChoice () {
 }
 
 function getPlayerChoice () {
-    let playerChoice = prompt("Please enter your choice, Rock, paper, or Scissors:").toLowerCase().trim()
+    let playerChoice = prompt("Please enter your choice, Rock, paper, or Scissors:").toLowerCase().trim();
     if (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors"){
         alert("Please enter a valid input");
-        return getPlayerChoice()
+        return getPlayerChoice();
     }
     return playerChoice;
 }
-let computerChoice = "rock";
-let playerChoice = getPlayerChoice();
-console.log(computerChoice);
+
 function playRound (computerChoice, playerChoice) {
+    let winner;
     if (computerChoice === playerChoice) {
-        alert("It’s a tie! 🤝, you'll replay this round")
+        alert("It’s a tie! 🤝");
     }
     else if ((playerChoice === "rock" && computerChoice === "scissors") || (playerChoice === "scissors" && computerChoice === "paper") || (playerChoice === "paper" && computerChoice === "rock")) {
-        alert("You win!!! 🎉🏆")
+        alert("You win!!! 🎉🏆");
+        winner = "player";
+        return winner;
     }
     else {
-        alert("You lose 😭💀")
+        alert("You lose 😭💀");
+        winner = "computer"
+        return winner;
     }
 }
 
-playRound(computerChoice, playerChoice);
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let round = 1;
+    alert("Welcome to the Rock, Paper Scissors Computer Game!!!")
+    while (round < 6) {
+        alert(`Round ${round} !!!`)
+        let computerChoice = getComputerChoice();
+        let playerChoice = getPlayerChoice();
+        let roundWinner = playRound(computerChoice, playerChoice);
+        if (roundWinner === "player") {
+            playerScore += 1;
+        }
+        else {
+            computerScore += 1;
+        }
+        round += 1;
+    }
+    let finalWinner;
+    if (playerScore > computerScore) {
+        finalWinner = "Player Wins 🎉🏆"
+    }
+    else if (playerScore === computerScore) {
+        finalWinner = "It’s a tie! 🤝"
+    }
+    else {
+        finalWinner = "Computer wins "
+    }
+    alert(`The Final Score is \nPlayer Score: ${playerScore} \nComputer Score: ${computerScore}\n${finalWinner}`)
+}
+
+playGame();
+
+function replay () {
+    let response = prompt("Do you want to replay??, yes or no!");
+    if (response.toLowerCase().trim() === "yes"){
+        playGame();
+    }
+    else if (response.toLowerCase().trim() === "no"){
+        alert("Thank You")
+        end; 
+    }
+    else {
+        alert("Please enter a valid input!!!");
+        replay()
+    }
+}
+
+replay();
