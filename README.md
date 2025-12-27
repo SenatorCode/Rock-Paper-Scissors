@@ -11,7 +11,7 @@ This is a classic **Rock, Paper & Scissors** game written in **JavaScript**, bui
 - 🧠 **User prompt** for human choice  
 - 🔍 **Real-time game logic** with alerts showing the **round outcome**  
 - 🧾 **Final score announcement** and **winner declaration**  
-- 🔁 **Option to play again** at the end of each game session  
+- 🔁 **Option to play again** at the end of each game session  🪨✊🏼✊✋✌️
 
 ### ⚠️ **Handles:**
 
