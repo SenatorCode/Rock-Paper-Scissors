@@ -10,23 +10,44 @@
     <div id="header"> ROCK PAPER SCISSORS</div>
     <div id="main">
         <div id="notify">
-            <h2 id="R-winner">Choose Your Weapon</h2>
+            <h2>Choose Your Weapon</h2>
             <h3>First to score 5 points wins the game</h3>
         </div>
         <div id="game">
             <div class="choice" id="p-choice">
                 <div id="p-emoji" class="emoji">❔</div>
-                <div id="p-score">Player:<span>0</span></div>
+                <div class="score">Player: <span id="p-score">0</span></div>
             </div>
             <div class="choice" id="c-choice">
-                <div id=" c-emoji" class="emoji">❔</div>
-                <div id="c-score">Computer:<span>0</span></div>
+                <div id="c-emoji" class="emoji">❔</div>
+                <div class ="score">Computer: <span id="c-score">0</span></div>
             </div>
         </div>
         <div class="options">
-            <button class="emoji">✊</button>
-            <button class="emoji">✋</button>
-            <button class="emoji">✌️</button>
+            <button class="emoji" id="rock" class ="">✊</button>
+            <button class="emoji" id="paper">✋</button>
+            <button class="emoji" id = "scissors">✌️</button>
+        </div>
+    </div>
+      <!-- Modal -->
+      <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <h1 id="modalTitle">You Won!</h1>
+            <p>Game Over</p>
+            <div class="final-score">
+                <div>
+                    <span>Player</span>
+                    <span id="modalPlayerScore">0</span>
+                </div>
+                <div>
+                    <span>Computer</span>
+                    <span id="modalComputerScore">0</span>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-play-again" id="playAgainBtn">Play Again</button>
+                <button class="btn-quit" id="quitBtn">Quit</button>
+            </div>
         </div>
     </div>
 </body>
