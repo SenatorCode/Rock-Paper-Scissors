@@ -57,6 +57,10 @@ This project started as a console-based Rock Paper Scissors game using `prompt()
 - Dark/Light theme toggle
 - Multiplayer mode
 
-## Author
+## License & Attribution
 
-Senator
+Created by [SenatorCode](https://github.com/SenatorCode)
+
+Copyright © 2025
+
+This project is open source and available under the MIT License.
